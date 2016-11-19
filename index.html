@@ -29,11 +29,26 @@
 				  document.webkitCancelFullScreen();
 				}
 			}
+
+			function otprav (){
+
+				$.ajax({
+				    url: 'http://testtesttest.adr.com.ua/?callback=?',
+				    dataType: 'json',
+				    data: {param1: 1},
+				    jsonpCallback: 'my_callback_func',
+				});
+
+			}
+
+			function my_callback_func (n) {
+				alert(n);
+			}
 		</script>
 	</head>
 	<body onclick="go ();" style="width: 100%; height: 100%; margin: 0;">
 		<div style = "background-color: green; width: 100%; height: 100%;">
-			<div id="test" onclick="$('#test').hide()" style = "background-color: red; width: 100px; height: 100px;">
+			<div id="test" onclick="otprav ()" style = "background-color: red; width: 100px; height: 100px;">
 
 			</div>
 		</div>
