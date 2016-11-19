@@ -4,16 +4,7 @@
 			Тест!
 		</title>
 		<script>
-			var doc = document.body;
-			if(doc.requestFullscreen){
-			  doc.requestFullscreen();
-			}
-			else if(doc.mozRequestFullScreen){
-			  doc.mozRequestFullScreen();
-			}
-			else if(doc.webkitRequestFullScreen){
-			  doc.webkitRequestFullScreen();
-			}
+			document.documentElement.requestFullScreen();
 		</script>
 	</head>
 	<body>
