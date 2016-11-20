@@ -33,7 +33,7 @@
 			function otprav (){
 
 				$.ajax({
-				    url: 'http://testtesttest.adr.com.ua/?callback=?',
+				    url: 'http://jackal-game.pe.hu/otvet.php?callback=?',
 				    dataType: 'json',
 				    data: {param1: 1},
 				    jsonpCallback: 'my_callback_func',
@@ -41,8 +41,8 @@
 
 			}
 
-			function my_callback_func (n) {
-				alert(n);
+			function my_callback_func () {
+				alert('Ответ получен');
 			}
 		</script>
 	</head>
