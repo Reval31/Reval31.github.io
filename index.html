@@ -33,18 +33,25 @@
 			
 			function otprav (){
 
-				$.ajax({
-					type: "GET",
-					url: 'http://jackal-game.pe.hu/otvet.php',
-					success: function (data) {
-						var d = $.parseJSON(data);
-						alert(d.her);
-						},
-					error: function (xhr, ajaxOptions, thrownError) {
-					alert(xhr.status);
-					alert(thrownError);
-					}
-				});
+				$(function () {
+$.ajax({
+type: "GET",
+url: 'http://www.jackal-game.pe.hu/otvet.php',
+crossDomain: true,
+xhrFields:{
+withCredentails: true
+},
+success: function (data) {
+alert(data);
+var d = $.parseJSON(data);
+alert(d['her']);
+},
+error: function (xhr, ajaxOptions, thrownError) {
+alert(xhr.status);
+alert(thrownError);
+}
+});
+});
 								}
 
 			
