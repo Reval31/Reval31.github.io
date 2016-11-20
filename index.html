@@ -34,16 +34,16 @@
 			function otprav (){
 
 				$.ajax({
-				type: "GET",
-				url: 'http://jackal-game.pe.hu/otvet.php',
-				success: function (data) {
-				var d = $.parseJSON(data);
-				alert(d.her);
-				},
-				error: function (xhr, ajaxOptions, thrownError) {
-				alert(xhr.status);
-				alert(thrownError);
-				}
+					type: "GET",
+					url: 'http://jackal-game.pe.hu/otvet.php',
+					success: function (data) {
+						var d = $.parseJSON(data);
+						alert(d.her);
+						},
+					error: function (xhr, ajaxOptions, thrownError) {
+					alert(xhr.status);
+					alert(thrownError);
+					}
 				});
 								}
 
