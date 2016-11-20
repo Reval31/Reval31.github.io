@@ -33,23 +33,19 @@
 			
 			function otprav (){
 
-				var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
-
-				var xhr = new XHR();
-
-				// (2) запрос на другой домен :)
-				xhr.open('GET', 'http://jackal-game.pe.hu/otvet.php', true);
-
-				xhr.onload = function() {
-				  alert( this.responseText );
+				$.ajax({
+				type: "GET",
+				url: 'http://jackal-game.pe.hu/otvet.php',
+				success: function (data) {
+				var d = $.parseJSON(data);
+				alert(d.her);
+				},
+				error: function (xhr, ajaxOptions, thrownError) {
+				alert(xhr.status);
+				alert(thrownError);
 				}
-
-				xhr.onerror = function() {
-				  alert( 'Ошибка ' + this.status );
-				}
-
-				xhr.send();
-			}
+				});
+								}
 
 			
 		</script>
