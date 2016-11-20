@@ -30,19 +30,25 @@
 				}
 			}
 
-			function my_callback_func () {
-				alert('Ответ получен');
-			}
-
+			
 			function otprav (){
-alert("Отправлено");
-				$.ajax({
-				    url: 'http://jackal-game.pe.hu/otvet.php?callback=?',
-				    dataType: 'json',
-				    data: {param1: 1},
-				    jsonpCallback: 'my_callback_func',
-				});
 
+				var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+
+				var xhr = new XHR();
+
+				// (2) запрос на другой домен :)
+				xhr.open('GET', 'http://jackal-game.pe.hu/otvet.php', true);
+
+				xhr.onload = function() {
+				  alert( this.responseText );
+				}
+
+				xhr.onerror = function() {
+				  alert( 'Ошибка ' + this.status );
+				}
+
+				xhr.send();
 			}
 
 			
@@ -50,7 +56,7 @@ alert("Отправлено");
 	</head>
 	<body onclick="" style="width: 100%; height: 100%; margin: 0;">
 		<div style = "background-color: green; width: 100%; height: 100%;">
-			<div id="test" onclick="otprav ()" style = "background-color: red; width: 100px; height: 100px;">
+			<div id="test" onclick="otprav ();" style = "background-color: red; width: 100px; height: 100px;">
 
 			</div>
 		</div>
