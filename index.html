@@ -29,34 +29,12 @@
 				  document.webkitCancelFullScreen();
 				}
 			}
-
-			
-	$(function () {
-$.ajax({
-type: "GET",
-url: 'http://www.jackal-game.pe.hu/otvet.php',
-crossDomain: true,
-xhrFields:{
-withCredentails: true
-},
-success: function (data) {
-alert(data);
-var d = $.parseJSON(data);
-alert(d['her']);
-},
-error: function (xhr, ajaxOptions, thrownError) {
-alert(xhr.status);
-alert(thrownError);
-}
-});
-});
-
-			
+		
 		</script>
 	</head>
-	<body onclick="" style="width: 100%; height: 100%; margin: 0;">
+	<body >
 		<div style = "background-color: green; width: 100%; height: 100%;">
-			<div id="test" onclick="otprav ();" style = "background-color: red; width: 100px; height: 100px;">
+			<div  onclick="go ();" style = "background-color: red; width: 100px; height: 100px;">
 
 			</div>
 		</div>
